@@ -4,16 +4,15 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ivanov.unlimint.test_task.entity.Order;
 import com.ivanov.unlimint.test_task.enums.CorrectEntry;
-import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
-public class JSON {
+public class JSON implements FileExtension{
 
+    @Override
     public List<Order> parse(File file) {
         List<Order> orders = new ArrayList<>();
         ObjectMapper mapper = new ObjectMapper();

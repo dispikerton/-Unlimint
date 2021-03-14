@@ -12,8 +12,9 @@ import java.util.ArrayList;
 import java.util.Currency;
 import java.util.List;
 
-@Component
-public class CSV {
+public class CSV implements FileExtension{
+
+    @Override
     public List<Order> parse(File file) {
         List<Order> orders = new ArrayList<>();
         Order parsedOrder;
